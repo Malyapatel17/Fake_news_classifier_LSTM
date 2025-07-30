@@ -1,69 +1,56 @@
-# Fake_news_classifier_LSTM
-This project builds an LSTM-based Fake News Classifier using only headlines. It applies tokenization, stopword removal, and lemmatization with Word2Vec embeddings. Achieves ~93% accuracy with faster training. Future work includes adding full text and advanced models for better results.
+# Fake News Classifier Using LSTM
 
-This repository contains a Fake News Detection model built using an LSTM (Long Short-Term Memory) neural network, trained to classify news headlines as fake or real.
+This repository contains a **Fake News Detection** model built using an LSTM (Long Short-Term Memory) neural network, trained to classify news headlines as fake or real.
 
-📂 Dataset
-Dataset source: Kaggle, Fake and True News
+## 📄 Description
 
-The dataset consists of two CSV files: Fake.csv and True.csv.
+This project builds an LSTM-based Fake News Classifier using only headlines. It applies tokenization, stopword removal, and lemmatization with Word2Vec embeddings. Achieves ~91% accuracy with faster training. Future work includes adding full text and advanced models for better results.
 
-🏗️ Pipeline Overview
-Data Loading
+## 📂 Dataset
 
-News headlines and metadata are loaded from the CSV files using pandas.
+- Dataset source: [Kaggle, Fake and True News](https://www.kaggle.com/code/therealsampat/fake-news-detection/input?select=True.csv)
+- The dataset consists of two CSV files: `Fake.csv` and `True.csv`.
 
-Preprocessing
+## 🏗️ Pipeline Overview
 
-Only the title column from the news articles is used for classification.
+1. **Data Loading**
+   - Load news headlines and metadata from the CSV files using pandas.
 
-Titles undergo comprehensive preprocessing steps including tokenization, stopword removal, and lemmatization using NLTK's WordNetLemmatizer to normalize words and improve model learning.
+2. **Preprocessing**
+   - Use the **`title`** column only.
+   - Perform tokenization, stopword removal, and **lemmatization** with NLTK's `WordNetLemmatizer` to normalize text.
+   - Lemmatization is preferred over stemming to better preserve word meaning.
 
-Lemmatization is chosen over stemming to better preserve the semantic meaning of words.
+3. **Embedding Layer**
+   - Use pre-trained Word2Vec embeddings (Google News, 300 dimensions) via Gensim for improved word representation.
 
-Embedding Layer
+4. **Model Building**
+   - Train an LSTM-based neural network to classify news headlines as fake or real.
 
-Utilizes pre-trained Word2Vec embeddings (Google News, 300 dimensions) via Gensim for enhanced word representation in headlines.
+5. **Evaluation**
+   - Split the dataset into training and testing sets using a train-test split.
+   - Evaluate accuracy and additional metrics on the test set.
+   - Assess classification performance using a **confusion matrix**.
+   - Additionally, conduct manual testing on custom, manually curated data samples to verify the model's behavior in practical, real-world scenarios.
 
-Model Building
+## ℹ️ Important Notes & Limitations
 
-An LSTM-based neural network is trained to classify news titles as either fake or real.
+- Only news headlines/titles are used for training and prediction; the full news text is excluded to reduce training time and resource needs.
+- Despite advanced preprocessing, limited context reduces potential maximum accuracy.
+- Evaluation includes a confusion matrix and manual testing on sample data to better understand strengths and weaknesses.
+- Suitable for quick prototyping or when fast inference is required.
 
-Evaluation
+## 🔮 Future Implementation
 
-Model performance is evaluated on held-out test data.
+- Combine both headlines and full news text for richer context and improved accuracy.
+- Apply similar preprocessing to full text (tokenization, stopword removal, lemmatization).
+- Explore advanced architectures like transformers and hybrid CNN-RNN models.
+- Improve performance via transfer learning, attention mechanisms, and hyperparameter tuning.
 
-The final achieved accuracy score is approximately 91% (please replace with your exact accuracy from code).
+## 🚀 How to Use
 
-ℹ️ Important Notes & Limitations
-Input Used:
+1. Clone the repository and install Python dependencies (see `requirements.txt`).
+2. Download dataset CSV files (`Fake.csv`, `True.csv`) from Kaggle and place in the working directory.
+3. Run the provided Jupyter notebook: `FakeNewsClassifierUsingLSTM_Final_Copy.ipynb`.
 
-Only the news headline/title was used for model training and prediction.
 
-The full news text was deliberately excluded to keep training time and computational resource requirements manageable.
-
-Preprocessing:
-
-Advanced preprocessing including tokenization, stopword removal, and lemmatization is already applied on the titles.
-
-Implications:
-
-Using only titles limits context information available, so while the accuracy is good, it may not represent the best possible fake news detection performance.
-
-This model is suited for quick prototyping or use cases where inference speed is prioritized over incorporating full article details.
-
-🔮 Future Implementation
-Incorporate both news headlines and full news text as inputs for richer context and improved classification accuracy.
-
-Apply similar advanced preprocessing techniques (tokenization, stopword removal, lemmatization) on the full text.
-
-Experiment with more advanced architectures such as transformer-based models or hybrid CNN-RNN models.
-
-Use transfer learning, attention mechanisms, and hyperparameter tuning for better performance and robustness.
-
-🚀 How to Use
-Clone this repository and ensure you have Python and the required libraries installed (see requirements.txt).
-
-Download the dataset from Kaggle and place the CSV files (Fake.csv, True.csv) in the working directory.
-
-Run the provided Jupyter notebook file: FakeNewsClassifierUsingLSTM_Final.ipynb.
