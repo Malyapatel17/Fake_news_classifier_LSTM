@@ -4,7 +4,7 @@ This repository contains a **Fake News Detection** model built using an LSTM (Lo
 
 ## 📄 Description
 
-This project builds an LSTM-based Fake News Classifier using only headlines. It applies tokenization, stopword removal, and lemmatization with Word2Vec embeddings. Achieves ~91% accuracy with faster training. Future work includes adding full text and advanced models for better results.
+This project builds an LSTM-based Fake News Classifier using only headlines. It applies tokenization, stopword removal, and lemmatization with Word2Vec embeddings. Achieves ~93% accuracy with faster training. Future work includes adding full text and advanced models for better results.
 
 ## 📂 Dataset
 
