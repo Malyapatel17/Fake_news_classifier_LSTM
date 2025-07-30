@@ -51,6 +51,6 @@ This project builds an LSTM-based Fake News Classifier using only headlines. It 
 
 1. Clone the repository and install Python dependencies (see `requirements.txt`).
 2. Download dataset CSV files (`Fake.csv`, `True.csv`) from Kaggle and place in the working directory.
-3. Run the provided Jupyter notebook: `FakeNewsClassifierUsingLSTM_Final_Copy.ipynb`.
+3. Run the provided Jupyter notebook: `FakeNewsClassifierUsingLSTM_Final.ipynb`.
 
 
